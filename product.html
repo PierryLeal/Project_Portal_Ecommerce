@@ -4,9 +4,9 @@
 <Head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../Style/style.css">
+  <link rel="stylesheet" href="Style/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ecommerce - Home</title>
+  <title>Ecommerce - Product Description</title>
   <link rel="shortcut icon" href="./images/amazon-favicon.png" type="image/x-icon">
 </Head>
 
@@ -20,8 +20,9 @@
         </a>
 
         <div class="d-none d-md-block address-style">
+          <img src="./images/pin.svg" alt="Pin">
           <div class="text-column-style">
-            <span style="width: auto; color: #9c9c9c; font-size: 12px;">Enviar para Pierry Leal</span>
+            <span style="width: auto; color: #9c9c9c; font-size: 12px;">Enviar para usuário</span>
             <span style="width: auto; color: #FFFFFF; font-weight: bold">Brasil</span>
           </div>
         </div>
@@ -37,13 +38,13 @@
         </div>
 
         <div class="d-none d-md-block text-column-style">
-          <span style="width: auto; color: #FFFFFF; font-size: 12px;">Olá, Pierry Silverio de Oliveira Leal</span>
-          <span style="width: auto; color: #FFFFFF; font-size: 12px ;font-weight: bold">Eng. Controle e Automação -
-            689964</span>
+          <span style="width: auto; color: #FFFFFF; font-size: 12px;">Olá, usuário</span>
+          <span style="width: auto; color: #FFFFFF; font-weight: bold">Contas e Listas</span>
         </div>
         <img class="d-none d-md-block" width="36px" src="images/cart.svg" alt="Cart">
 
       </nav>
+
       <div class="d-md-none search-style-2">
         <input id="input-search-mobile" class="form-control mr-sm-2" autocomplete="off"
           style="margin: 0 !important; border-radius: 4px 0 0 4px" type="search" placeholder="Perquisar"
@@ -70,8 +71,8 @@
             <a class="dropdown-item" href="#">Saiba como usar seus benefícios Prime</a>
           </div>
         </div>
-
       </div>
+
       <a href="#" class="d-none d-md-inline">
         <img width="20px" src="./images/justify.svg" alt="Justify">
         <span>Todos</span>
@@ -90,79 +91,55 @@
         <span style="font-size: 20px;">Saiba como usar seus benefícios</span>
         <span style="font-size: 20px; color: #007bff;">Prime</span>
       </a>
-      <div class="d-md-none container-information-style">
-        <div style="display: flex; justify-content: space-between ;">
-          <div class="d-md-none  text-column-style-mobile">
-            <span style="width: auto; color: #FFFFFF; font-size: 8px;">Olá, Pierry Silverio de Oliveira Leal</span>
-            <span style="width: auto; color: #FFFFFF; font-size: 8px ;font-weight: bold">Eng. Controle e Automação -
-              689964</span>
-          </div>
-          <img class="d-md-none " src="images/cart.svg" alt="Cart">
-        </div>
-      </div>
     </div>
   </header>
-  <main>
-    <div class="first-content-style">
-      <div class="filter-style">
-        <p>Busca Rápida - Filtros</p>
-        <span>Selecione os filtros disponíveis para encontrar seu produto</span>
-        <!-- <select id="select-department" class="form-select" aria-label="Default select example"></select> -->
-        <select data-size="5" id="select-classification" class="form-select form-select-lg form-control "
-          aria-label="Default select example"></select>
-        <select id="select-categories" class="form-select form-select-lg form-control"
-          aria-label="Default select example"> </select>
-        <div class="value-style">
-          <span>Min </span>
-          <input id="min-value" type="number" class="form-control  " placeholder="R$ 0,00" aria-label=""
-            aria-describedby="inputGroup-sizing-sm">
-          <span>Máx </span>
-          <input id="max-value" type="number" class="form-control " placeholder="R$ 0,00" aria-label=""
-            aria-describedby="basic-addon1">
-        </div>
-        <button class="btn btn-warning my-2 my-sm-0" type="submit" onclick="handleButtonClick()">
-          <img src="./images/search.svg" alt="Search">
-          <span style="font-size: 16px; font-weight: 500;">Pesquisar</span>
-        </button>
-      </div>
-      <div id="mainSlider" class="carousel carousel-dark slide carousel-style" data-ride="carousel">
-        <ol id="carrousel-target" class="carousel-indicators "></ol>
-        <div id="carrousel-itens" class="carousel-inner"> </div>
-        <a class="carousel-control-prev" href="#mainSlider" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#mainSlider" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Próximo</span>
-        </a>
-      </div>
-    </div>
 
-    <div class="second-content-style">
-      <div id="selling-items" class="list-itens-style"></div>
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <div class="most-reviwed-style">
-          <p>Itens mais procurados</p>
-          <div class="most-reviwed-selling-style" id="most-reviwed-items"> </div>
-          <div class="button-end-style">
-            <button class="btn btn-warning my-2 my-sm-0" type="submit" style="width: 40%;">
-              <span style="font-size: 16px; font-weight: 500;">Ver mais</span>
-            </button>
+  <main>
+    <div class="description-product-container-style">
+      <div class="description-product-image-style">
+        <img id="product-image" style="max-width:100%; max-height: 100%; ">
+      </div>
+      <div class="description-product-style">
+        <div>
+          <h1 id="product-title" style="font-weight: 700;"></h1>
+          <div style="font-size: 1.2rem; color: #007bff; font-weight: 500;">
+            <span>Categoria: </span>
+            <span id="product-category"></span>
+          </div>
+          <div id="star-classification" style="display: flex; margin: .5rem 0;">
+            <img id="first-star-classification" height="15px">
+            <img id="second-star-classification" height="15px">
+            <img id="third-star-classification" height="15px">
+            <img id="fourth-star-classification" height="15px">
+            <img id="fifth-star-classification" height="15px">
+          </div>
+          <div class="separator-style"></div>
+          <div style="display: flex; gap: 3rem;">
+            <div style="display: flex;">
+              <div style="font-weight: 500;">
+                <span>R$:</span>
+              </div>
+              <span id="product-price" style="font-size: 2rem; line-height: 2rem; font-weight: 700;"></span>
+            </div>
+            <div style="font-size: 1.2rem; font-weight: 500;">
+              <span style=" color: #04a704;">Em estoque: </span>
+              <span id="product-count"></span>
+              <span> unidades</span>
+            </div>
+          </div>
+          <div
+            style="padding:.5rem ;border: 1px solid #9c9c9c; border-radius: 5px ;margin-top: 1rem; font-size: 1rem;max-height: 8rem; overflow-y: auto; font-weight: 500;">
+            <span id="product-description"></span>
           </div>
         </div>
-        <div class="newsLetter-style">
-          <p>NewsLetter</p>
-          <span>Entre com seu email para receber rpomoções e notícias</span>
-          <div class="input-group input-group-sm mt-3 mb-0">
-            <input type="email" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
-              placeholder="Digite seu email">
-          </div>
-          <div class="button-end-style">
-            <button class="btn btn-warning my-2 my-sm-0" type="submit" style="width: 40%;">
-              <span style="font-size: 16px; font-weight: 500;">Ver mais</span>
-            </button>
-          </div>
+        <div
+          style="display: flex; flex-direction: column; justify-content: flex-end; gap: 1rem; color: #000000; margin-top: 1rem;">
+          <button class="btn btn-primary my-sm-0 w-sm" type="submit" onclick="">
+            <span style="font-size: 16px; font-weight: 500;">Adicionar ao carrinho</span>
+          </button>
+          <button class="btn btn-info my-sm-0" type="submit" onclick="">
+            <span style="font-size: 16px; font-weight: 500;">Comprar agora</span>
+          </button>
         </div>
       </div>
     </div>
@@ -247,7 +224,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="../Javascript/index.js"></script>
+  <script src="Javascript/product.js"></script>
 </body>
 
 </html>
