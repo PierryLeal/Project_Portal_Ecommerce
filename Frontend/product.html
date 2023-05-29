@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../Style/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ecommerce - Product Description</title>
+  <link rel="shortcut icon" href="./images/amazon-favicon.png" type="image/x-icon">
+</Head>
+
+<body>
+  <header class="header">
+    <div class="header-style">
+      <nav class="navbar-style">
+        <a href="index.html">
+          <img height="35px" src="./images/Amazon-logo.png" alt="Logo">
+          <span style="font-size: 12px;">.com.br</span>
+        </a>
+
+        <div class="d-none d-md-block address-style">
+          <img src="./images/pin.svg" alt="Pin">
+          <div class="text-column-style">
+            <span style="width: auto; color: #9c9c9c; font-size: 12px;">Enviar para usuário</span>
+            <span style="width: auto; color: #FFFFFF; font-weight: bold">Brasil</span>
+          </div>
+        </div>
+
+        <div class="d-none d-md-block search-style">
+          <input id="input-search" class="form-control mr-sm-2" style="margin: 0 !important; border-radius: 4px 0 0 4px"
+            autocomplete="off" type="search" placeholder="Perquisar" aria-label="Search"
+            onkeydown="handleKeyPress(event)">
+          <button class="btn btn-warning my-2 my-sm-0" type="submit" style="border-radius: 0 4px 4px 0"
+            onclick="handleSearchButtonClick()">
+            <img src="./images/search.svg" alt="Search">
+          </button>
+        </div>
+
+        <div class="d-none d-md-block text-column-style">
+          <span style="width: auto; color: #FFFFFF; font-size: 12px;">Olá, usuário</span>
+          <span style="width: auto; color: #FFFFFF; font-weight: bold">Contas e Listas</span>
+        </div>
+        <img class="d-none d-md-block" width="36px" src="images/cart.svg" alt="Cart">
+
+      </nav>
+
+      <div class="d-md-none search-style-2">
+        <input id="input-search-mobile" class="form-control mr-sm-2" autocomplete="off"
+          style="margin: 0 !important; border-radius: 4px 0 0 4px" type="search" placeholder="Perquisar"
+          aria-label="Search" onkeydown="handleKeyPress(event)">
+        <button class="btn btn-warning my-2 my-sm-0" type="submit" onclick="handleSearchButtonClick()"
+          style="border-radius: 0 4px 4px 0">
+          <img src="./images/search.svg" alt="Search">
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-options-style">
+      <div class="selector-container d-md-none">
+        <div class="dropdown">
+          <a class="dropdown-toggle" href="#" role="button" id="menuDropdown" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img width="20px" src="./images/justify.svg" alt="Justify">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="menuDropdown">
+            <a class="dropdown-item" href="#">Todos</a>
+            <a class="dropdown-item" href="#">Venda na Amazon</a>
+            <a class="dropdown-item" href="#">Ideias para Presente</a>
+            <a class="dropdown-item" href="#">Eletrônicos</a>
+            <a class="dropdown-item" href="#">Saiba como usar seus benefícios Prime</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="d-none d-md-inline">
+        <img width="20px" src="./images/justify.svg" alt="Justify">
+        <span>Todos</span>
+      </a>
+
+      <a href="#" class="d-none d-md-inline">
+        <span>Venda na Amazon</span>
+      </a>
+      <a href="#" class="d-none d-md-inline">
+        <span>Ideias para Presente</span>
+      </a>
+      <a href="#" class="d-none d-md-inline">
+        <span>Eletrônicos</span>
+      </a>
+      <a href="#" class="d-none d-md-inline">
+        <span style="font-size: 20px;">Saiba como usar seus benefícios</span>
+        <span style="font-size: 20px; color: #007bff;">Prime</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="description-product-container-style">
+      <div class="description-product-image-style">
+        <img id="product-image" style="max-width:100%; max-height: 100%; ">
+      </div>
+      <div class="description-product-style">
+        <div>
+          <h1 id="product-title" style="font-weight: 700;"></h1>
+          <div style="font-size: 1.2rem; color: #007bff; font-weight: 500;">
+            <span>Categoria: </span>
+            <span id="product-category"></span>
+          </div>
+          <div id="star-classification" style="display: flex; margin: .5rem 0;">
+            <img id="first-star-classification" height="15px">
+            <img id="second-star-classification" height="15px">
+            <img id="third-star-classification" height="15px">
+            <img id="fourth-star-classification" height="15px">
+            <img id="fifth-star-classification" height="15px">
+          </div>
+          <div class="separator-style"></div>
+          <div style="display: flex; gap: 3rem;">
+            <div style="display: flex;">
+              <div style="font-weight: 500;">
+                <span>R$:</span>
+              </div>
+              <span id="product-price" style="font-size: 2rem; line-height: 2rem; font-weight: 700;"></span>
+            </div>
+            <div style="font-size: 1.2rem; font-weight: 500;">
+              <span style=" color: #04a704;">Em estoque: </span>
+              <span id="product-count"></span>
+              <span> unidades</span>
+            </div>
+          </div>
+          <div
+            style="padding:.5rem ;border: 1px solid #9c9c9c; border-radius: 5px ;margin-top: 1rem; font-size: 1rem;max-height: 8rem; overflow-y: auto; font-weight: 500;">
+            <span id="product-description"></span>
+          </div>
+        </div>
+        <div
+          style="display: flex; flex-direction: column; justify-content: flex-end; gap: 1rem; color: #000000; margin-top: 1rem;">
+          <button class="btn btn-primary my-sm-0 w-sm" type="submit" onclick="">
+            <span style="font-size: 16px; font-weight: 500;">Adicionar ao carrinho</span>
+          </button>
+          <button class="btn btn-info my-sm-0" type="submit" onclick="">
+            <span style="font-size: 16px; font-weight: 500;">Comprar agora</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="back-top-style">
+      <a href="">
+        <span>Voltar ao topo</span>
+      </a>
+    </div>
+    <div class="footer-style">
+      <div class="footer-items-style">
+        <p>Métodos de Pagamentos</p>
+        <div class="payment-methods-style">
+          <img src="./images/PaymentMethods/mastercard.svg" alt="Mastercard icon">
+          <img src="./images/PaymentMethods/amazon.svg" alt="Amazon icon">
+          <img src="./images/PaymentMethods/visa.svg" alt="Visa icon">
+          <img src="./images/PaymentMethods/americanExpress.svg" alt="American Express icon">
+          <img src="./images/PaymentMethods/bitCoin.svg" alt="Bit Coin icon">
+          <img src="./images/PaymentMethods/maestro.svg" alt="Maestro icon">
+          <img src="./images/PaymentMethods/pix.svg" alt="Pix icon">
+          <img src="./images/PaymentMethods/payPal.svg" alt="PayPal icon">
+          <img src="./images/PaymentMethods/payU.svg" alt="PayU icon">
+        </div>
+      </div>
+      <div class="footer-items-style">
+        <p>Links Rápidos</p>
+        <div class="links-style">
+          <a href="#">Ajuda</a>
+          <a href="#">Política de envio</a>
+          <a href="#">Cancelamento e Devoluções</a>
+          <a href="#">Perguntas frequentes</a>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Responsabilidade</a>
+        </div>
+      </div>
+      <div class="footer-items-style">
+        <p>Mídias Sociais</p>
+        <div class="social-media-style">
+          <a href="#">
+            <img src="./images/SocialMedia/facebook.svg" alt="Facebook icon">
+          </a>
+          <a href="#">
+            <img src="./images/SocialMedia/instagram.svg" alt="Instagram icon">
+          </a>
+          <a href="#">
+            <img src="./images/SocialMedia/linkedin.svg" alt="Linkedin icon">
+          </a>
+          <a href="#">
+            <img src="./images/SocialMedia/twitter.svg" alt="Twitter icon">
+          </a>
+          <a href="#">
+            <img src="./images/SocialMedia/whatsapp.svg" alt="Whatsapp icon">
+          </a>
+        </div>
+      </div>
+      <div class="footer-items-style">
+        <p>Meios de contato</p>
+        <div class="contact-us-style">
+          <p>Av. Juiz Marco Túlio Isaac - 7001</p>
+          <p>Condomínio Logístico - Vila Cristina</p>
+          <p>Betim - MG</p>
+          <div>
+            <img src="./images/Contact/mail.svg" alt="mail icon">
+            <a href="#">ajuda-amazon@amazon.com.br</a>
+          </div>
+          <div>
+            <img src="./images/Contact/phone.svg" alt="phone icon">
+            <a href="#">55 11 3958 5225</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="company-line-style">
+      <span>© 2023 - Company.com.br</span>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="../Javascript/product.js"></script>
+</body>
+
+</html>
